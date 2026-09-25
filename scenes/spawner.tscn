@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://2waevcf3xc0n"]
+
+[ext_resource type="Script" uid="uid://cu57tu20ymgll" path="res://scripts/spawner.gd" id="1_2vbf6"]
+
+[node name="Spawner" type="VisibleOnScreenNotifier2D" unique_id=1828984056]
+rect = Rect2(-64, -64, 128, 128)
+script = ExtResource("1_2vbf6")
+
+[node name="ChildrenHolder" type="Node2D" parent="." unique_id=1534314384]
+
+[node name="Timer" type="Timer" parent="." unique_id=1797193509]
+wait_time = 6.0
+autostart = true
+
+[connection signal="screen_entered" from="." to="." method="_on_screen_entered"]
+[connection signal="screen_exited" from="." to="." method="_on_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

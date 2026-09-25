@@ -1,0 +1,32 @@
+okeee notes for meself
+
+*ROOTS*
+
+what's the root of a human? (no not their feet... I am NOT making a game about feet) Their shoes!!!
+Also hell is like the root of the Earth i guess uhhh
+
+CoTL's follower thing
+Vampire Survivors (but cozy??? like no enemies ig)
+
+meow meow meow
+
+upgrades:
+	map knowledge
+	camera zoom
+	speed boots (but need the lava pools first)
+	potion bottle go boom
+	
+	ASCEND (that's bad)
+
+next:
+	spawn outside of vision
+	make a map...
+	sfx
+	the lava pools + kill using environment + shoe on fire
+	
+
+Credits needed:
+	Outline shader: https://godotshaders.com/shader/all-in-one-outline-shader/
+	SineShaker shader: https://godotshaders.com/shader/sine-wave-camera-view-shader/
+	Fonts are from BitFontMaker2
+	Many of the sound effects were taken from Pixabay
