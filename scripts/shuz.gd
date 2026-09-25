@@ -6,12 +6,15 @@ extends CharacterBody2D
 @onready var navigation_agent: NavigationAgent2D = get_node("NavigationAgent2D")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var soles_particles: GPUParticles2D = $SolesParticles
+@onready var relax_dialogue: Label = $AnimatedSprite2D2/RelaxDialogue
 
 var SPEED = 200.00 ## whoops i don't wanna lowercase this
 const JUMP_VELOCITY = -400.00
 const ACCEL = 1
 const DEACCEL = 750
 const INV_ROOT_TWO = 0.707106781
+
+var dialogues = ['Wow! I feel so relaxed! Thanks!!!', 'Huh. That wasn\'t so bad!', 'This is quite nice!', '10/10. Would come again.', 'I love this place!', 'I\'m going to write a poem!', 'This is fire.', 'YOLO', 'mmmmmm burnt rubber', 'Thank you, Demonkat!', 'blehhhhhhh']
 
 signal shuz_soles(new_soles: int)
 
@@ -81,6 +84,9 @@ func _on_sight_radius_body_exited(_body: Node2D) -> void:
 func _ready() -> void:
 	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 	shuz_soles.connect(get_tree().get_first_node_in_group("Root").passdown_change_soles)
+	
+	# sets the dialogue to be a random dialogue from the list
+	relax_dialogue = dialogues[randi_range(0, dialogues.size() - 1)]
 
 func set_movement_target(movement_target: Vector2):
 	navigation_agent.set_target_position(movement_target)

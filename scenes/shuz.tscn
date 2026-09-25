@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://ybcq4eyw85gw"]
 
-[ext_resource type="Script" uid="uid://csnad5vwbmwl8" path="res://scripts/shuz.gd" id="1_q0hdc"]
-[ext_resource type="Texture2D" uid="uid://duhuhf8e71hjs" path="res://art/theshuz.png" id="2_nmsg5"]
-[ext_resource type="Texture2D" uid="uid://cmvldk43simdu" path="res://art/soles.png" id="2_tvv2b"]
-[ext_resource type="Texture2D" uid="uid://d0jil3k3snssk" path="res://art/theshuzgleeful.png" id="3_7rsce"]
-[ext_resource type="Texture2D" uid="uid://cuhegknhtid0v" path="res://art/theshuz_damaged.png" id="3_nmsg5"]
-[ext_resource type="Texture2D" uid="uid://b544uhwvo8ib4" path="res://art/theshuz_relaxed.png" id="4_m0unf"]
-[ext_resource type="Texture2D" uid="uid://dfus70kv2ex2x" path="res://art/shoespeech.png" id="5_u3frk"]
-[ext_resource type="FontFile" uid="uid://bs5jnspy5msgq" path="res://fonts/JinxedWizards#ChristinaAntoinetteNeofotistou.ttf" id="6_7rsce"]
+[ext_resource type="Script" uid="uid://csnad5vwbmwl8" path="res://scripts/shuz.gd" id="1_rn6fc"]
+[ext_resource type="Texture2D" uid="uid://cmvldk43simdu" path="res://art/soles.png" id="2_7brfg"]
+[ext_resource type="Texture2D" uid="uid://cuhegknhtid0v" path="res://art/theshuz_damaged.png" id="3_d84s3"]
+[ext_resource type="Texture2D" uid="uid://d0jil3k3snssk" path="res://art/theshuzgleeful.png" id="4_11kwj"]
+[ext_resource type="Texture2D" uid="uid://duhuhf8e71hjs" path="res://art/theshuz.png" id="5_nko2f"]
+[ext_resource type="Texture2D" uid="uid://b544uhwvo8ib4" path="res://art/theshuz_relaxed.png" id="6_aadie"]
+[ext_resource type="Texture2D" uid="uid://dfus70kv2ex2x" path="res://art/shoespeech.png" id="7_1yva5"]
+[ext_resource type="FontFile" uid="uid://bs5jnspy5msgq" path="res://fonts/JinxedWizards#ChristinaAntoinetteNeofotistou.ttf" id="8_ektwd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o4040"]
 radius = 8.0
@@ -39,30 +39,30 @@ alpha_curve = SubResource("CurveTexture_whk2h")
 radius = 192.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d33qy"]
-atlas = ExtResource("3_7rsce")
+atlas = ExtResource("4_11kwj")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k411r"]
-atlas = ExtResource("3_7rsce")
+atlas = ExtResource("4_11kwj")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uciib"]
-atlas = ExtResource("3_7rsce")
+atlas = ExtResource("4_11kwj")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpp4d"]
-atlas = ExtResource("3_7rsce")
+atlas = ExtResource("4_11kwj")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gd4vy"]
-atlas = ExtResource("2_nmsg5")
+atlas = ExtResource("5_nko2f")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a56dw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_nmsg5")
+"texture": ExtResource("3_d84s3")
 }],
 "loop": 1,
 "name": &"damaged",
@@ -87,7 +87,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nmsg5")
+"texture": ExtResource("5_nko2f")
 }],
 "loop": 1,
 "name": &"idle",
@@ -95,7 +95,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_m0unf")
+"texture": ExtResource("6_aadie")
 }],
 "loop": 1,
 "name": &"relaxed",
@@ -170,7 +170,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.175, 0, 0.175, 0),
+"points": PackedFloat32Array(1, -0.175, 0, 0.175, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -270,19 +270,19 @@ _data = {
 radius = 24.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tvv2b"]
-atlas = ExtResource("5_u3frk")
+atlas = ExtResource("7_1yva5")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tumx5"]
-atlas = ExtResource("5_u3frk")
+atlas = ExtResource("7_1yva5")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1eoad"]
-atlas = ExtResource("5_u3frk")
+atlas = ExtResource("7_1yva5")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vthyt"]
-atlas = ExtResource("5_u3frk")
+atlas = ExtResource("7_1yva5")
 region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o4040"]
@@ -308,7 +308,7 @@ animations = [{
 [node name="Shuz" type="CharacterBody2D" unique_id=1518598414]
 collision_layer = 2
 collision_mask = 3
-script = ExtResource("1_q0hdc")
+script = ExtResource("1_rn6fc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516543236]
 rotation = 1.5707964
@@ -317,7 +317,7 @@ shape = SubResource("CapsuleShape2D_o4040")
 [node name="SolesParticles" type="GPUParticles2D" parent="." unique_id=1410272002]
 emitting = false
 amount = 10
-texture = ExtResource("2_tvv2b")
+texture = ExtResource("2_7brfg")
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_o4040")
@@ -335,7 +335,7 @@ rotation = -0.17453292
 sprite_frames = SubResource("SpriteFrames_a56dw")
 animation = &"gleeful"
 autoplay = "idle"
-frame_progress = 0.7951434
+frame_progress = 0.93681186
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=321668851]
 active = false
@@ -361,22 +361,21 @@ shape = SubResource("CircleShape2D_whk2h")
 debug_color = Color(1, 0.003921569, 0.09019608, 0.078431375)
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=538785067]
-modulate = Color(1, 1, 1, 0)
 z_index = 10
 position = Vector2(40, -40)
 sprite_frames = SubResource("SpriteFrames_o4040")
 autoplay = "default"
-frame_progress = 0.18801573
+frame_progress = 0.32972577
 
-[node name="Label" type="Label" parent="AnimatedSprite2D2" unique_id=918821618]
+[node name="RelaxDialogue" type="Label" parent="AnimatedSprite2D2" unique_id=918821618]
 custom_minimum_size = Vector2(48.42, 31.595)
 offset_left = -24.0
 offset_top = -19.0
 offset_right = 24.419998
 offset_bottom = 11.625
-theme_override_fonts/font = ExtResource("6_7rsce")
+theme_override_fonts/font = ExtResource("8_ektwd")
 theme_override_font_sizes/font_size = 8
-text = "Wow! I feel so relaxed! Thanks!!!"
+text = "lorem ipsum is what i say"
 autowrap_mode = 2
 
 [connection signal="body_entered" from="SightRadius" to="." method="_on_sight_radius_body_entered"]

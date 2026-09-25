@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cbwsw0i3eosnd" path="res://art/falltree1.png" id="6_jrhyn"]
 [ext_resource type="Script" uid="uid://c4eibqa83ve0m" path="res://scripts/player.gd" id="7_log26"]
 [ext_resource type="Shader" uid="uid://cshgrsj6f6p7i" path="res://shaders/outline.gdshader" id="8_gt4lb"]
-[ext_resource type="Texture2D" uid="uid://b780m6edrl0h" path="res://art/demon-sheet.png" id="9_ya6yc"]
+[ext_resource type="Texture2D" uid="uid://bmfn4fsvbiqta" path="res://art/demongoldhorns.png" id="9_y3xxt"]
 [ext_resource type="PackedScene" uid="uid://2waevcf3xc0n" path="res://scenes/spawner.tscn" id="10_mflgo"]
 [ext_resource type="PackedScene" uid="uid://ybcq4eyw85gw" path="res://scenes/shuz.tscn" id="11_34frw"]
 
@@ -249,52 +249,60 @@ shader_parameter/square_border = true
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gd4vy"]
-atlas = ExtResource("9_ya6yc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsp7o"]
+atlas = ExtResource("9_y3xxt")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qw60f"]
-atlas = ExtResource("9_ya6yc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5cgh"]
+atlas = ExtResource("9_y3xxt")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eji0w"]
-atlas = ExtResource("9_ya6yc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgks2"]
+atlas = ExtResource("9_y3xxt")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qwhpj"]
-atlas = ExtResource("9_ya6yc")
-region = Rect2(0, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dylgi"]
+atlas = ExtResource("9_y3xxt")
+region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qt76e"]
-atlas = ExtResource("9_ya6yc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrhyn"]
+atlas = ExtResource("9_y3xxt")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_log26"]
+atlas = ExtResource("9_y3xxt")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt4lb"]
+atlas = ExtResource("9_y3xxt")
 region = Rect2(0, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sq7yr"]
-atlas = ExtResource("9_ya6yc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya6yc"]
+atlas = ExtResource("9_y3xxt")
 region = Rect2(64, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r3r3k"]
-atlas = ExtResource("9_ya6yc")
-region = Rect2(64, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mflgo"]
+atlas = ExtResource("9_y3xxt")
+region = Rect2(0, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_blcw0"]
-atlas = ExtResource("9_ya6yc")
-region = Rect2(128, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_34frw"]
+atlas = ExtResource("9_y3xxt")
+region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o4040"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gd4vy")
+"texture": SubResource("AtlasTexture_xsp7o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qw60f")
+"texture": SubResource("AtlasTexture_l5cgh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eji0w")
+"texture": SubResource("AtlasTexture_vgks2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qwhpj")
+"texture": SubResource("AtlasTexture_dylgi")
 }],
 "loop": 0,
 "name": &"bananaleaf",
@@ -302,10 +310,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qt76e")
+"texture": SubResource("AtlasTexture_jrhyn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sq7yr")
+"texture": SubResource("AtlasTexture_log26")
 }],
 "loop": 1,
 "name": &"idle",
@@ -313,10 +321,21 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r3r3k")
+"texture": SubResource("AtlasTexture_gt4lb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_blcw0")
+"texture": SubResource("AtlasTexture_ya6yc")
+}],
+"loop": 1,
+"name": &"sleep",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mflgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34frw")
 }],
 "loop": 1,
 "name": &"walk",
@@ -570,9 +589,9 @@ shape = SubResource("CapsuleShape2D_whk2h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/Player" unique_id=1769982241]
 material = SubResource("ShaderMaterial_whk2h")
-position = Vector2(0, 0.74971807)
-rotation = -0.17432551
-scale = Vector2(1.0506397, 0.9430303)
+position = Vector2(0, 0.7494455)
+rotation = -0.17438544
+scale = Vector2(1.0209022, 0.9764852)
 sprite_frames = SubResource("SpriteFrames_o4040")
 animation = &"bananaleaf"
 autoplay = "idle"
