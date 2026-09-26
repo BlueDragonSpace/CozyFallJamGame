@@ -2,16 +2,28 @@
 
 [ext_resource type="Script" uid="uid://csnad5vwbmwl8" path="res://scripts/shuz.gd" id="1_rn6fc"]
 [ext_resource type="Texture2D" uid="uid://cmvldk43simdu" path="res://art/soles.png" id="2_7brfg"]
+[ext_resource type="Texture2D" uid="uid://dy1b1fj3ybudy" path="res://art/on_fire1.png" id="3_11kwj"]
 [ext_resource type="Texture2D" uid="uid://cuhegknhtid0v" path="res://art/theshuz_damaged.png" id="3_d84s3"]
 [ext_resource type="Texture2D" uid="uid://d0jil3k3snssk" path="res://art/theshuzgleeful.png" id="4_11kwj"]
+[ext_resource type="Texture2D" uid="uid://djngjw3buawmb" path="res://art/on_fire2.png" id="4_nko2f"]
+[ext_resource type="Texture2D" uid="uid://b5og4u71pini4" path="res://art/on_fire3.png" id="5_aadie"]
 [ext_resource type="Texture2D" uid="uid://duhuhf8e71hjs" path="res://art/theshuz.png" id="5_nko2f"]
 [ext_resource type="Texture2D" uid="uid://b544uhwvo8ib4" path="res://art/theshuz_relaxed.png" id="6_aadie"]
 [ext_resource type="Texture2D" uid="uid://dfus70kv2ex2x" path="res://art/shoespeech.png" id="7_1yva5"]
 [ext_resource type="FontFile" uid="uid://bs5jnspy5msgq" path="res://fonts/JinxedWizards#ChristinaAntoinetteNeofotistou.ttf" id="8_ektwd"]
+[ext_resource type="AudioStream" uid="uid://1h5ya4g37fgp" path="res://sfx/screams/freesound_community-ouchmp3-14591.mp3" id="12_r50nt"]
+[ext_resource type="AudioStream" uid="uid://dl1bnvagxp66p" path="res://sfx/screams/short_scream.mp3" id="13_0a8bl"]
+[ext_resource type="AudioStream" uid="uid://dumtqrdfydk8e" path="res://sfx/screams/universfield-cartoon-scream-323779.mp3" id="14_w146l"]
+[ext_resource type="AudioStream" uid="uid://dry67o60cg5go" path="res://sfx/screams/universfield-funny-cartoon-scream-229172.mp3" id="15_vys6w"]
+[ext_resource type="AudioStream" uid="uid://b0xnbws00v1o5" path="res://sfx/screams/universfield-male-death-scream-horror-352706.mp3" id="16_ocyt6"]
+[ext_resource type="AudioStream" uid="uid://b8p8yt170w2y7" path="res://sfx/screams/universfield-man-scream-259682.mp3" id="17_4rl6k"]
+[ext_resource type="AudioStream" uid="uid://dytk7r0gxstsr" path="res://sfx/onfire.mp3" id="18_0a8bl"]
+[ext_resource type="AudioStream" uid="uid://cqdarkppfmqbo" path="res://sfx/bananaleafhit.wav" id="19_w146l"]
+[ext_resource type="AudioStream" uid="uid://baalmp1nx5tdd" path="res://sfx/shoestep.wav" id="20_vys6w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o4040"]
 radius = 8.0
-height = 16.0
+height = 32.0
 
 [sub_resource type="Curve" id="Curve_a56dw"]
 _data = [Vector2(0.64084506, 1), 0.0, 0.0, 0, 0, Vector2(0.9647888, 0.04494381), 0.0, 0.0, 0, 0]
@@ -36,7 +48,24 @@ scale_max = 0.5
 alpha_curve = SubResource("CurveTexture_whk2h")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o4040"]
-radius = 192.0
+radius = 160.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_whk2h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_11kwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nko2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aadie")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d33qy"]
 atlas = ExtResource("4_11kwj")
@@ -170,7 +199,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.175, 0, 0.175, 0),
+"points": PackedFloat32Array(0, -0.175, 0, 0.175, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -311,6 +340,7 @@ collision_mask = 3
 script = ExtResource("1_rn6fc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516543236]
+position = Vector2(0, 8)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_o4040")
 
@@ -329,16 +359,23 @@ collision_layer = 0
 shape = SubResource("CircleShape2D_o4040")
 debug_color = Color(0, 0.6, 0.69803923, 0.039215688)
 
+[node name="OnFire" type="AnimatedSprite2D" parent="." unique_id=1258989528]
+visible = false
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_whk2h")
+autoplay = "default"
+frame_progress = 0.96964324
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=160051943]
-position = Vector2(0, 0.75)
-rotation = -0.17453292
+position = Vector2(0, 0.74901325)
+rotation = -0.17427048
+scale = Vector2(1.0768751, 0.9135157)
 sprite_frames = SubResource("SpriteFrames_a56dw")
 animation = &"gleeful"
 autoplay = "idle"
-frame_progress = 0.93681186
+frame_progress = 0.46847633
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=321668851]
-active = false
 root_node = NodePath(".")
 tree_root = SubResource("AnimationNodeBlendSpace1D_o4040")
 anim_player = NodePath("AnimationPlayer")
@@ -349,7 +386,7 @@ libraries/ = SubResource("AnimationLibrary_qwhpj")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=476949930]
 path_postprocessing = 1
-avoidance_enabled = true
+simplify_path = true
 radius = 20.0
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1777429055]
@@ -361,11 +398,12 @@ shape = SubResource("CircleShape2D_whk2h")
 debug_color = Color(1, 0.003921569, 0.09019608, 0.078431375)
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=538785067]
+modulate = Color(1, 1, 1, 0)
 z_index = 10
 position = Vector2(40, -40)
 sprite_frames = SubResource("SpriteFrames_o4040")
 autoplay = "default"
-frame_progress = 0.32972577
+frame_progress = 0.8614096
 
 [node name="RelaxDialogue" type="Label" parent="AnimatedSprite2D2" unique_id=918821618]
 custom_minimum_size = Vector2(48.42, 31.595)
@@ -377,6 +415,45 @@ theme_override_fonts/font = ExtResource("8_ektwd")
 theme_override_font_sizes/font_size = 8
 text = "lorem ipsum is what i say"
 autowrap_mode = 2
+
+[node name="SoundFolder" type="Node2D" parent="." unique_id=1432017960]
+
+[node name="FreesoundCommunityOuchmp314591" type="AudioStreamPlayer2D" parent="SoundFolder" unique_id=1447098846]
+stream = ExtResource("12_r50nt")
+volume_db = 8.412
+
+[node name="ShortScream" type="AudioStreamPlayer2D" parent="SoundFolder" unique_id=727056817]
+stream = ExtResource("13_0a8bl")
+volume_db = 6.882
+
+[node name="UniversfieldCartoonScream323779" type="AudioStreamPlayer2D" parent="SoundFolder" unique_id=777230851]
+stream = ExtResource("14_w146l")
+volume_db = 12.235
+
+[node name="UniversfieldFunnyCartoonScream229172" type="AudioStreamPlayer2D" parent="SoundFolder" unique_id=1196330975]
+stream = ExtResource("15_vys6w")
+
+[node name="UniversfieldMaleDeathScreamHorror352706" type="AudioStreamPlayer2D" parent="SoundFolder" unique_id=1748058736]
+stream = ExtResource("16_ocyt6")
+volume_db = 7.648
+
+[node name="UniversfieldManScream259682" type="AudioStreamPlayer2D" parent="SoundFolder" unique_id=1482553659]
+stream = ExtResource("17_4rl6k")
+volume_db = 11.471
+
+[node name="NotScreamFolder" type="Node2D" parent="." unique_id=1773134469]
+
+[node name="Onfire" type="AudioStreamPlayer" parent="NotScreamFolder" unique_id=493116762]
+stream = ExtResource("18_0a8bl")
+volume_db = -7.377
+stream_paused = true
+
+[node name="Bananaleafhit" type="AudioStreamPlayer" parent="NotScreamFolder" unique_id=1716439490]
+stream = ExtResource("19_w146l")
+
+[node name="Shoestep" type="AudioStreamPlayer2D" parent="NotScreamFolder" unique_id=491324840]
+stream = ExtResource("20_vys6w")
+volume_db = -10.876
 
 [connection signal="body_entered" from="SightRadius" to="." method="_on_sight_radius_body_entered"]
 [connection signal="body_exited" from="SightRadius" to="." method="_on_sight_radius_body_exited"]

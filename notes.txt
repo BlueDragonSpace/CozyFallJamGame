@@ -10,14 +10,6 @@ Vampire Survivors (but cozy??? like no enemies ig)
 
 meow meow meow
 
-upgrades:
-	map knowledge
-	camera zoom
-	speed boots (but need the lava pools first)
-	potion bottle go boom
-	
-	ASCEND (that's bad)
-
 hey don't you think they might just be afraid of you?
 WHAT IS "AFRAID".
 it's... nevermind.
@@ -54,16 +46,25 @@ AGREED! WITHOUT I, THOSE POOR SOLES WOULD NEVER DARE TO TOUCH IT
 THAT'S WHY I MUST CONVINCE THEM TO GO IN! BY YELLING AND RUNNING!
 i dont think that's why they "decide" to go in...
 
-next:
-	spawn outside of vision
-	make a map...
-	sfx
-	the lava pools + kill using environment + shoe on fire
-	benches
+upgrades:
+	map knowledge -> map shows position of shoes
+	camera zoom
+	speed boots (but need the lava pools first)
+	potion bottle go boom
 	
+	ASCEND (that's bad)
+
+
+next:
+	sfx
+	benches
+	dead flowers, trees, ashes, and so on
+	basic shoppe (bananaleaf, vision, speed, ascension) 
+		+ every time something is bought, new shoe type
 
 Credits needed:
 	Outline shader: https://godotshaders.com/shader/all-in-one-outline-shader/
 	SineShaker shader: https://godotshaders.com/shader/sine-wave-camera-view-shader/
+	GodRay shader: https://godotshaders.com/shader/god-rays/
 	Fonts are from BitFontMaker2
-	Many of the sound effects were taken from Pixabay
+	Many of the sound effects were taken from Pixabay (or I created them in Chiptone)

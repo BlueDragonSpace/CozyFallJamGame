@@ -4,12 +4,9 @@
 [ext_resource type="Script" uid="uid://bkf1le5d72ts0" path="res://scripts/soles.gd" id="2_xsp7o"]
 [ext_resource type="Texture2D" uid="uid://cmvldk43simdu" path="res://art/soles.png" id="3_l5cgh"]
 [ext_resource type="Shader" uid="uid://b88mwteevk3ti" path="res://shaders/sineshake.gdshader" id="4_vgks2"]
-[ext_resource type="AudioStream" uid="uid://ccdkidtf77xyg" path="res://sfx/solesincrement.wav" id="4_x7ldt"]
 [ext_resource type="Texture2D" uid="uid://beb6h2brkbjjf" path="res://art/basic_tileset.png" id="5_dylgi"]
 [ext_resource type="Texture2D" uid="uid://cbwsw0i3eosnd" path="res://art/falltree1.png" id="6_jrhyn"]
-[ext_resource type="AudioStream" uid="uid://jsl03bblxxsu" path="res://sfx/spendsoles.wav" id="6_phl1g"]
 [ext_resource type="Texture2D" uid="uid://db2i0cwqkxo0i" path="res://art/tileset2.png" id="6_xsp7o"]
-[ext_resource type="AudioStream" uid="uid://xnetrus3fvvc" path="res://sfx/fartrejection.wav" id="7_58tnd"]
 [ext_resource type="Script" uid="uid://c4eibqa83ve0m" path="res://scripts/player.gd" id="7_log26"]
 [ext_resource type="Shader" uid="uid://cshgrsj6f6p7i" path="res://shaders/outline.gdshader" id="8_gt4lb"]
 [ext_resource type="Texture2D" uid="uid://bmfn4fsvbiqta" path="res://art/demongoldhorns.png" id="9_y3xxt"]
@@ -22,20 +19,7 @@
 [ext_resource type="Shader" uid="uid://bybg4oxo6tj8u" path="res://shaders/godray.gdshader" id="15_log26"]
 [ext_resource type="Texture2D" uid="uid://beyf835wsipab" path="res://art/demonmeow1.png" id="15_ya6yc"]
 [ext_resource type="Texture2D" uid="uid://xodhi5ucypaf" path="res://art/demonmeow2.png" id="16_mflgo"]
-[ext_resource type="AudioStream" uid="uid://dytk7r0gxstsr" path="res://sfx/onfire.mp3" id="19_isfgf"]
 [ext_resource type="Script" uid="uid://dau6ykc4kh7jq" path="res://scripts/buyable.gd" id="20_mflgo"]
-[ext_resource type="Script" uid="uid://dm0abjm7do4hm" path="res://scripts/buyables/placeholder.gd" id="21_34frw"]
-[ext_resource type="AudioStream" uid="uid://b3rupllyygxwr" path="res://sfx/ChoirToHeaven.wav" id="21_58tnd"]
-[ext_resource type="Script" uid="uid://djaj1a38e2mdj" path="res://scripts/buyables/bananaleaf.gd" id="22_f3p2p"]
-[ext_resource type="Texture2D" uid="uid://dhyq5b4iqlpxs" path="res://art/bananaleaf.png" id="23_ccljq"]
-[ext_resource type="Script" uid="uid://8eqfi8va14mn" path="res://scripts/buyables/ascend.gd" id="23_e2w8j"]
-[ext_resource type="Texture2D" uid="uid://bop706xy71l1t" path="res://art/wings.png" id="23_jehah"]
-[ext_resource type="AudioStream" uid="uid://cqdarkppfmqbo" path="res://sfx/bananaleafhit.wav" id="23_jn22m"]
-[ext_resource type="Script" uid="uid://b2gc3rm8uci23" path="res://scripts/buyables/catnip.gd" id="23_re66h"]
-[ext_resource type="AudioStream" uid="uid://dsvh5lt2q0rhr" path="res://sfx/bananaleafwhiff.wav" id="24_8yue3"]
-[ext_resource type="Texture2D" uid="uid://b1wq2s43qwj2e" path="res://art/catnip.png" id="24_re66h"]
-[ext_resource type="AudioStream" uid="uid://bk7dkj8iw4l3x" path="res://sfx/mario-meow.mp3" id="25_8yue3"]
-[ext_resource type="AudioStream" uid="uid://xnoxn2v0rb2l" path="res://sfx/catstep.wav" id="26_agklt"]
 
 [sub_resource type="Animation" id="Animation_qwhpj"]
 length = 0.001
@@ -207,174 +191,6 @@ _data = {
 &"RESET": SubResource("Animation_qwhpj"),
 &"change_num": SubResource("Animation_huihk"),
 &"first_time_in": SubResource("Animation_qt76e")
-}
-
-[sub_resource type="Animation" id="Animation_f3p2p"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset_transform_position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:offset_transform_position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(125.86, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_ccljq"]
-resource_name = "tutorialup"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset_transform_position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.26666668, 11.899044, 0, -0.099999994, -13.616434, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:offset_transform_position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(125.86, -0.25, 0, 0.25, 0, 0, -0.3, -90.162865, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jehah"]
-_data = {
-&"RESET": SubResource("Animation_f3p2p"),
-&"tutorialup": SubResource("Animation_ccljq")
-}
-
-[sub_resource type="Animation" id="Animation_jehah"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:offset_transform_position_ratio:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel2:offset_transform_position_ratio:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_isfgf"]
-resource_name = "panels_in"
-length = 1.2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:offset_transform_position_ratio:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0, 0, -0.7, 0.044770043, 0, 0),
-"times": PackedFloat32Array(0, 1.2)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel2:offset_transform_position_ratio:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.56666666, 0.008140008, 0, 0),
-"times": PackedFloat32Array(0, 1.2)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ihmk7"]
-_data = {
-&"RESET": SubResource("Animation_jehah"),
-&"panels_in": SubResource("Animation_isfgf")
-}
-
-[sub_resource type="Gradient" id="Gradient_a56dw"]
-interpolation_mode = 1
-offsets = PackedFloat32Array(0.00921659, 0.30414745, 0.6175115)
-colors = PackedColorArray(0.6, 0.36078432, 0.24313726, 1, 0.7490196, 0.22352941, 0.22352941, 1, 0.7490196, 0.61960787, 0.22352941, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_whk2h"]
-noise_type = 3
-frequency = 0.0316
-fractal_octaves = 2
-fractal_lacunarity = 3.66
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_o4040"]
-width = 216
-height = 216
-noise = SubResource("FastNoiseLite_whk2h")
-color_ramp = SubResource("Gradient_a56dw")
-in_3d_space = true
-
-[sub_resource type="Animation" id="Animation_58tnd"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture:noise:offset:z")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_e6w1q"]
-resource_name = "neverendingchange"
-length = 999.0
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture:noise:offset:z")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1000, -166.5, -16.666666, 0, 0),
-"times": PackedFloat32Array(0, 999)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jn22m"]
-_data = {
-&"RESET": SubResource("Animation_58tnd"),
-&"neverendingchange": SubResource("Animation_e6w1q")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o4040"]
@@ -984,32 +800,10 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../AnimatedSprite2D:position:x")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../AnimatedSprite2D:position:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.75, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
 
 [sub_resource type="Animation" id="Animation_gt4lb"]
 resource_name = "ascend"
-length = 14.0
+length = 0.75
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1017,9 +811,9 @@ tracks/0/path = NodePath(".:material:shader_parameter/cutoff")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 0, 0, 0),
-"points": PackedFloat32Array(0.50900006, 0, 0, 0.16666667, -0.06816668, 0.1, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, 0.50900006, 0, 0, 0.16666667, -0.06816668),
-"times": PackedFloat32Array(0, 0.36666667, 11.137313, 11.833333)
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0.50900006, 0, 0, 0.16666667, -0.06816668, 0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.36666667)
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1028,10 +822,10 @@ tracks/1/path = NodePath(".:material:shader_parameter/color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.16666667, 0.4, 11.170646, 12),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.16666667, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector4(1, 0.9, 0.65, 0.275), Vector4(1, 0.9, 0.65, 0.8), Vector4(1, 0.9, 0.65, 0.8), Vector4(1, 0.9, 0.65, 0.275)]
+"values": [Vector4(1, 0.9, 0.65, 0.275), Vector4(1, 0.9, 0.65, 0.8)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1057,57 +851,6 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../AnimatedSprite2D:position:x")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.26666665, -39.975876, -0.06360054, -0.13333333, -15.0438595, 0.39999998, -33.157898, -20.326756, -0.20000005, 20.87719, 0.13523269, -14.11639, -13.57237, -0.022573302, -1.7880433, 0.16666663, 13.201752, -17.256582, -0.15796247, 6.9835997, 0.16666675, -7.3684196, -32, -0.33333325, 9.524122, 0, 0, -32, -0.33333325, 9.524122, 0, 0),
-"times": PackedFloat32Array(2.5666661, 3.8999996, 5.566666, 7.3666663, 8.866667, 9.966666, 14)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../AnimatedSprite2D:position:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0.75, -0.25, 0, 1.0666666, -52.699562, -120, -1.0999999, 40.725876, 0, 0, -120, -1.0999999, 40.725876, 0, 0),
-"times": PackedFloat32Array(2.5666661, 9.966666, 14)
-}
-tracks/6/type = "method"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../../..")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(11.333333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"thx_for_playing"
-}]
-}
-tracks/7/type = "audio"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("HeavenAnimation/HeavenChoir")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("21_58tnd")
-}],
-"times": PackedFloat32Array(0.06666666)
-}
-tracks/7/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ya6yc"]
 _data = {
@@ -1120,9 +863,6 @@ radius = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whk2h"]
 size = Vector2(160, 232)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y1bg5"]
-normal = Vector2(-1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a56dw"]
 size = Vector2(16, 16)
@@ -1182,113 +922,6 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_mflgo"),
 &"visibilize": SubResource("Animation_34frw")
-}
-
-[sub_resource type="Animation" id="Animation_jn22m"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Catnip:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.12042772, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_8yue3"]
-resource_name = "buhh"
-length = 3.0000000000000004
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Catnip:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-0.12042772, -0.25, 0, 0.25, 0, 0.19198622, -0.6666667, -0.05206899, 0, 0),
-"times": PackedFloat32Array(0, 3)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_agklt"]
-_data = {
-&"RESET": SubResource("Animation_jn22m"),
-&"buhh": SubResource("Animation_8yue3")
-}
-
-[sub_resource type="Animation" id="Animation_e2w8j"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Wings:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_re66h"]
-resource_name = "float"
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Wings:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.56666666, -1.037037, -8, -0.5333333, 1.2241716, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_isfgf"]
-_data = {
-&"RESET": SubResource("Animation_e2w8j"),
-&"float": SubResource("Animation_re66h")
-}
-
-[sub_resource type="Animation" id="Animation_ihmk7"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bananaleaf:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.12042772, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_phl1g"]
-resource_name = "rot"
-length = 4.0
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bananaleaf:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-0.12042772, -0.25, 0, 0.25, 0, 0.12042772, -0.16666667, -0.040142573, 0, 0),
-"times": PackedFloat32Array(0, 4)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_58tnd"]
-_data = {
-&"RESET": SubResource("Animation_ihmk7"),
-&"rot": SubResource("Animation_phl1g")
 }
 
 [node name="Root" type="Control" unique_id=915206170 groups=["Root"]]
@@ -1370,54 +1003,6 @@ text = "0"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/CanvasLayer/Control/HBoxContainer/VBoxContainer/Control/Soles" unique_id=206033491]
 libraries/ = SubResource("AnimationLibrary_sq7yr")
 
-[node name="Solesincrement" type="AudioStreamPlayer" parent="UI/CanvasLayer/Control/HBoxContainer/VBoxContainer/Control/Soles" unique_id=1441109775]
-stream = ExtResource("4_x7ldt")
-volume_db = -7.324
-
-[node name="BananaLeafTutorial" type="Panel" parent="UI/CanvasLayer/Control/HBoxContainer/VBoxContainer/Control" unique_id=1102016161]
-self_modulate = Color(0.1764706, 0.36862746, 0.5529412, 1)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -32.0
-offset_top = -40.0
-offset_right = 32.0
-grow_horizontal = 2
-grow_vertical = 0
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, 125.86)
-offset_transform_rotation = 0.082030475
-
-[node name="TextureRect" type="TextureRect" parent="UI/CanvasLayer/Control/HBoxContainer/VBoxContainer/Control/BananaLeafTutorial" unique_id=1260497480]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("23_ccljq")
-
-[node name="Label" type="Label" parent="UI/CanvasLayer/Control/HBoxContainer/VBoxContainer/Control/BananaLeafTutorial" unique_id=595911551]
-layout_mode = 0
-offset_left = 48.5
-offset_top = 18.0
-offset_right = 88.5
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 32
-text = "C"
-
-[node name="BananaMation" type="AnimationPlayer" parent="UI/CanvasLayer/Control/HBoxContainer/VBoxContainer/Control/BananaLeafTutorial" unique_id=1358962058]
-libraries/ = SubResource("AnimationLibrary_jehah")
-
 [node name="HSeparator2" type="HSeparator" parent="UI/CanvasLayer/Control/HBoxContainer/VBoxContainer" unique_id=1153242871]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
@@ -1427,82 +1012,6 @@ size_flags_vertical = 3
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="MovieBars" type="VBoxContainer" parent="UI/CanvasLayer/Control" unique_id=876013390]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="ColorRect" parent="UI/CanvasLayer/Control/MovieBars" unique_id=984745003]
-layout_mode = 2
-size_flags_vertical = 3
-offset_transform_enabled = true
-offset_transform_position_ratio = Vector2(0, -1)
-color = Color(0, 0, 0, 1)
-
-[node name="HSeparator" type="HSeparator" parent="UI/CanvasLayer/Control/MovieBars" unique_id=1244760806]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 4.0
-
-[node name="Panel2" type="ColorRect" parent="UI/CanvasLayer/Control/MovieBars" unique_id=1766685322]
-layout_mode = 2
-size_flags_vertical = 3
-offset_transform_enabled = true
-offset_transform_position_ratio = Vector2(0, 1)
-color = Color(0, 0, 0, 1)
-
-[node name="MovieAnimation" type="AnimationPlayer" parent="UI/CanvasLayer/Control/MovieBars" unique_id=831732645]
-libraries/ = SubResource("AnimationLibrary_ihmk7")
-
-[node name="ThxForPlaying" type="Control" parent="UI/CanvasLayer/Control" unique_id=81528725]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="UI/CanvasLayer/Control/ThxForPlaying" unique_id=1985205734]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("NoiseTexture2D_o4040")
-expand_mode = 5
-stretch_mode = 5
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/CanvasLayer/Control/ThxForPlaying/TextureRect" unique_id=171279568]
-libraries/ = SubResource("AnimationLibrary_jn22m")
-autoplay = &"neverendingchange"
-
-[node name="Label" type="Label" parent="UI/CanvasLayer/Control/ThxForPlaying" unique_id=186115114]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -8.0
-offset_right = 20.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 64
-text = "Thx for playing!!! :3
-Created in 3 days for the Cozy Fall Jam
-
-- Catragon"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="UI/CanvasLayer" unique_id=1872949633]
 material = SubResource("ShaderMaterial_o4040")
@@ -1515,18 +1024,6 @@ grow_vertical = 2
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI/CanvasLayer/ColorRect" unique_id=149253975]
 sprite_frames = SubResource("SpriteFrames_whk2h")
 animation = &"tinkytinkydo"
-
-[node name="RegularerSoundFolder" type="Control" parent="UI" unique_id=1718141156]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Spendsoles" type="AudioStreamPlayer" parent="UI/RegularerSoundFolder" unique_id=906938474]
-stream = ExtResource("6_phl1g")
-
-[node name="Fartrejection" type="AudioStreamPlayer" parent="UI/RegularerSoundFolder" unique_id=1437321647]
-stream = ExtResource("7_58tnd")
-volume_db = -5.127
 
 [node name="World" type="Node2D" parent="." unique_id=605689712]
 position = Vector2(976, -871)
@@ -1565,7 +1062,7 @@ texture = ExtResource("13_l5cgh")
 polygon = PackedVector2Array(3, -23, 3, -21.400002, -6.0999985, -17.8, -10.5, -20, -19.5, -20, -28.5, -15, -30.800003, -15, -39.7, -6.200001, -63.9, -8, -78.8, -8, -83, -3.7999992, -83, 3, -74.6, 9, -74, 9, -74, 13, -49, 32.9, -49, 34.6, -42.2, 36, -27.199997, 36, -24.199997, 33, -16.699997, 39, -3.5, 39, 13.5, 29, 14.300003, 29, 23.300003, 36, 31.600006, 36, 46, 27.099998, 58.100006, 26, 62.600006, 26, 77, 17.099998, 84.2, 16, 89.8, 16, 97.7, 9, 100, 9, 100, -1.7000008, 90, -13.700001, 90, -16.099998, 68.899994, -15, 53.800003, -15, 51, -17.8, 51, -19.7, 37, -21.8, 37, -23, 29.199997, -23, 22.300003, -16.2, 13, -21.3, 13, -23)
 
 [node name="LavaPool2" type="Area2D" parent="World/LavaFolder" unique_id=1587551557]
-position = Vector2(152, 295)
+position = Vector2(80, 247)
 collision_layer = 0
 collision_mask = 3
 
@@ -1608,7 +1105,7 @@ texture = ExtResource("13_l5cgh")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/LavaFolder/LavaPool5" unique_id=507444305]
 polygon = PackedVector2Array(3, -23, 3, -21.400002, -6.0999985, -17.8, -10.5, -20, -19.5, -20, -28.5, -15, -30.800003, -15, -39.7, -6.200001, -63.9, -8, -78.8, -8, -83, -3.7999992, -83, 3, -74.6, 9, -74, 9, -74, 13, -49, 32.9, -49, 34.6, -42.2, 36, -27.199997, 36, -24.199997, 33, -16.699997, 39, -3.5, 39, 13.5, 29, 14.300003, 29, 23.300003, 36, 31.600006, 36, 46, 27.099998, 58.100006, 26, 62.600006, 26, 77, 17.099998, 84.2, 16, 89.8, 16, 97.7, 9, 100, 9, 100, -1.7000008, 90, -13.700001, 90, -16.099998, 68.899994, -15, 53.800003, -15, 51, -17.8, 51, -19.7, 37, -21.8, 37, -23, 29.199997, -23, 22.300003, -16.2, 13, -21.3, 13, -23)
 
-[node name="Player" type="CharacterBody2D" parent="World" unique_id=1908724820 groups=["Player"]]
+[node name="Player" type="CharacterBody2D" parent="World" unique_id=1908724820]
 position = Vector2(-216, 423)
 collision_mask = 7
 motion_mode = 1
@@ -1626,12 +1123,14 @@ autoplay = "default"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/Player" unique_id=1769982241]
 material = SubResource("ShaderMaterial_whk2h")
-position = Vector2(0, 0.75)
-rotation = -0.17438567
-scale = Vector2(1.0208694, 0.976522)
+position = Vector2(0, 0.74971104)
+rotation = -0.17432691
+scale = Vector2(1.0291967, 0.9671536)
 sprite_frames = SubResource("SpriteFrames_o4040")
 animation = &"meow"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="Hurtbox" type="Area2D" parent="World/Player/AnimatedSprite2D" unique_id=1987323977]
 collision_layer = 8
@@ -1653,7 +1152,7 @@ parameters/blend_position = -0.99848944
 libraries/ = SubResource("AnimationLibrary_qwhpj")
 
 [node name="MainCam" type="Camera2D" parent="World/Player" unique_id=329048043]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 limit_left = -2
 limit_top = -968
 limit_right = 1498
@@ -1677,8 +1176,6 @@ grow_vertical = 2
 [node name="HeavenAnimation" type="AnimationPlayer" parent="World/Player/HeavenLight" unique_id=901755951]
 libraries/ = SubResource("AnimationLibrary_ya6yc")
 
-[node name="HeavenChoir" type="AudioStreamPlayer" parent="World/Player/HeavenLight/HeavenAnimation" unique_id=782602940]
-
 [node name="Node" type="Node" parent="World/Player/HeavenLight" unique_id=274899256]
 
 [node name="HeavenCam" type="Camera2D" parent="World/Player/HeavenLight/Node" unique_id=1874246151]
@@ -1692,27 +1189,6 @@ collision_mask = 32
 shape = SubResource("CircleShape2D_o4040")
 debug_color = Color(0.82023543, 0.40333125, 0, 0.41960785)
 
-[node name="RegularSoundFolder" type="Node2D" parent="World/Player" unique_id=2135497401]
-
-[node name="Onfire" type="AudioStreamPlayer" parent="World/Player/RegularSoundFolder" unique_id=165549894]
-stream = ExtResource("19_isfgf")
-volume_db = -5.099
-
-[node name="Bananaleafhit" type="AudioStreamPlayer" parent="World/Player/RegularSoundFolder" unique_id=55868339]
-stream = ExtResource("23_jn22m")
-
-[node name="Bananaleafwhiff" type="AudioStreamPlayer" parent="World/Player/RegularSoundFolder" unique_id=2144248256]
-stream = ExtResource("24_8yue3")
-
-[node name="MarioMeow" type="AudioStreamPlayer" parent="World/Player/RegularSoundFolder" unique_id=500936890]
-stream = ExtResource("25_8yue3")
-volume_db = -10.986
-
-[node name="Catstep" type="AudioStreamPlayer" parent="World/Player/RegularSoundFolder" unique_id=152732715]
-stream = ExtResource("26_agklt")
-volume_db = -16.845
-pitch_scale = 0.92
-
 [node name="LeavePoint" type="Node2D" parent="World" unique_id=524626491]
 position = Vector2(992, 383)
 
@@ -1724,12 +1200,8 @@ collision_mask = 2
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_whk2h")
 
-[node name="whydotheyleave" type="CollisionShape2D" parent="World/LeavePoint/LeaveZone" unique_id=1350016242]
-position = Vector2(-408, -8)
-shape = SubResource("WorldBoundaryShape2D_y1bg5")
-
 [node name="Shuz" parent="World" unique_id=1518598414 instance=ExtResource("11_34frw")]
-position = Vector2(112, 359)
+position = Vector2(-136, 455)
 
 [node name="SpawnerFolder" type="Node2D" parent="World" unique_id=1048942520]
 
@@ -1766,211 +1238,42 @@ max_children = 2
 
 [node name="Shoppe" type="Node2D" parent="World" unique_id=1423369132]
 
-[node name="BuyableBaseObject" type="Area2D" parent="World/Shoppe" unique_id=1776302080]
-position = Vector2(-112, 339)
+[node name="Buyable" type="Area2D" parent="World/Shoppe" unique_id=1776302080]
+position = Vector2(-112, 375)
 collision_layer = 32
 collision_mask = 0
 script = ExtResource("20_mflgo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shoppe/BuyableBaseObject" unique_id=1079286769]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shoppe/Buyable" unique_id=1079286769]
 shape = SubResource("RectangleShape2D_a56dw")
 
-[node name="Panel" type="Panel" parent="World/Shoppe/BuyableBaseObject" unique_id=756807660]
+[node name="Panel" type="Panel" parent="World/Shoppe/Buyable" unique_id=756807660]
 modulate = Color(1, 1, 1, 0)
 offset_left = -24.0
-offset_top = -56.0
+offset_top = -40.0
 offset_right = 28.0
-offset_bottom = -12.0
+offset_bottom = -11.0
 offset_transform_enabled = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="World/Shoppe/BuyableBaseObject/Panel" unique_id=1141616906]
+[node name="Cost" type="Label" parent="World/Shoppe/Buyable/Panel" unique_id=1942267405]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
-
-[node name="Name" type="Label" parent="World/Shoppe/BuyableBaseObject/Panel/VBoxContainer" unique_id=1942267405]
-layout_mode = 2
 text = "Meow"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Cost" type="Label" parent="World/Shoppe/BuyableBaseObject/Panel/VBoxContainer" unique_id=509295450]
-layout_mode = 2
-text = "Meow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Shoppe/BuyableBaseObject" unique_id=1731414267]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Shoppe/Buyable" unique_id=1731414267]
 libraries/ = SubResource("AnimationLibrary_8ui5n")
-
-[node name="AdditionalScript" type="Node" parent="World/Shoppe/BuyableBaseObject" unique_id=1692572328]
-script = ExtResource("21_34frw")
-
-[node name="Floater" type="AnimationPlayer" parent="World/Shoppe/BuyableBaseObject" unique_id=1643862687]
-
-[node name="Catnipbuy" type="Area2D" parent="World/Shoppe" unique_id=2012988098]
-position = Vector2(-48, 367)
-collision_layer = 32
-collision_mask = 0
-script = ExtResource("20_mflgo")
-cost = 200
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shoppe/Catnipbuy" unique_id=62578472]
-shape = SubResource("RectangleShape2D_a56dw")
-
-[node name="Panel" type="Panel" parent="World/Shoppe/Catnipbuy" unique_id=1462408333]
-modulate = Color(1, 1, 1, 0)
-offset_left = -24.0
-offset_top = -56.0
-offset_right = 28.0
-offset_bottom = -12.0
-offset_transform_enabled = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="World/Shoppe/Catnipbuy/Panel" unique_id=230683695]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Name" type="Label" parent="World/Shoppe/Catnipbuy/Panel/VBoxContainer" unique_id=730857800]
-layout_mode = 2
-text = "Meow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cost" type="Label" parent="World/Shoppe/Catnipbuy/Panel/VBoxContainer" unique_id=1407356379]
-layout_mode = 2
-text = "Meow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Shoppe/Catnipbuy" unique_id=567189972]
-libraries/ = SubResource("AnimationLibrary_8ui5n")
-
-[node name="AdditionalScript" type="Node" parent="World/Shoppe/Catnipbuy" unique_id=963052646]
-script = ExtResource("23_re66h")
-
-[node name="Floater" type="AnimationPlayer" parent="World/Shoppe/Catnipbuy" unique_id=1140582267]
-libraries/ = SubResource("AnimationLibrary_agklt")
-autoplay = &"buhh"
-
-[node name="Catnip" type="Sprite2D" parent="World/Shoppe/Catnipbuy" unique_id=956030350]
-rotation = -0.12042772
-texture = ExtResource("24_re66h")
-
-[node name="AscendBuy" type="Area2D" parent="World/Shoppe" unique_id=551261488]
-position = Vector2(32, 367)
-collision_layer = 32
-collision_mask = 0
-script = ExtResource("20_mflgo")
-cost = 1000
-item_name = "Ascend"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shoppe/AscendBuy" unique_id=179724733]
-shape = SubResource("RectangleShape2D_a56dw")
-
-[node name="Panel" type="Panel" parent="World/Shoppe/AscendBuy" unique_id=674451941]
-modulate = Color(1, 1, 1, 0)
-offset_left = -24.0
-offset_top = -56.0
-offset_right = 28.0
-offset_bottom = -12.0
-offset_transform_enabled = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="World/Shoppe/AscendBuy/Panel" unique_id=499101918]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Name" type="Label" parent="World/Shoppe/AscendBuy/Panel/VBoxContainer" unique_id=445778331]
-layout_mode = 2
-text = "Meow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cost" type="Label" parent="World/Shoppe/AscendBuy/Panel/VBoxContainer" unique_id=847472061]
-layout_mode = 2
-text = "Meow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Shoppe/AscendBuy" unique_id=1725039969]
-libraries/ = SubResource("AnimationLibrary_8ui5n")
-
-[node name="AdditionalScript" type="Node" parent="World/Shoppe/AscendBuy" unique_id=919601985]
-script = ExtResource("23_e2w8j")
-
-[node name="Wings" type="Sprite2D" parent="World/Shoppe/AscendBuy" unique_id=25506577]
-texture = ExtResource("23_jehah")
-
-[node name="Floater" type="AnimationPlayer" parent="World/Shoppe/AscendBuy" unique_id=145823666]
-libraries/ = SubResource("AnimationLibrary_isfgf")
-autoplay = &"float"
-
-[node name="BananaLeafBuy" type="Area2D" parent="World/Shoppe" unique_id=409628056]
-position = Vector2(-144, 367)
-collision_layer = 32
-collision_mask = 0
-script = ExtResource("20_mflgo")
-item_name = "Banana Leaf"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shoppe/BananaLeafBuy" unique_id=1620029424]
-shape = SubResource("RectangleShape2D_a56dw")
-
-[node name="Panel" type="Panel" parent="World/Shoppe/BananaLeafBuy" unique_id=310177818]
-modulate = Color(1, 1, 1, 0)
-offset_left = -24.0
-offset_top = -56.0
-offset_right = 28.0
-offset_bottom = -12.0
-offset_transform_enabled = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="World/Shoppe/BananaLeafBuy/Panel" unique_id=1025049963]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Name" type="Label" parent="World/Shoppe/BananaLeafBuy/Panel/VBoxContainer" unique_id=1223427324]
-layout_mode = 2
-text = "Meow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cost" type="Label" parent="World/Shoppe/BananaLeafBuy/Panel/VBoxContainer" unique_id=2058937845]
-layout_mode = 2
-text = "Meow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Shoppe/BananaLeafBuy" unique_id=117339225]
-libraries/ = SubResource("AnimationLibrary_8ui5n")
-
-[node name="AdditionalScript" type="Node" parent="World/Shoppe/BananaLeafBuy" unique_id=1479576326]
-script = ExtResource("22_f3p2p")
-
-[node name="Bananaleaf" type="Sprite2D" parent="World/Shoppe/BananaLeafBuy" unique_id=1187019302]
-rotation = -0.12042772
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("23_ccljq")
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="World/Shoppe/BananaLeafBuy" unique_id=1372401566]
-libraries/ = SubResource("AnimationLibrary_58tnd")
-autoplay = &"rot"
 
 [connection signal="body_entered" from="World/LavaFolder/LavaPool" to="." method="_on_lava_pool_body_entered"]
 [connection signal="body_exited" from="World/LavaFolder/LavaPool" to="." method="_on_lava_pool_body_exited"]

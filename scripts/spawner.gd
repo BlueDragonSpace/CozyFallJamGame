@@ -4,13 +4,16 @@ extends VisibleOnScreenNotifier2D
 @onready var children_holder: Node2D = $ChildrenHolder
 @onready var timer: Timer = $Timer
 @export var max_children : int = 3
+@export var timer_time := 10.5
 
 const SHUZ = preload("uid://ybcq4eyw85gw")
+
+func _ready() -> void:
+	timer.wait_time = timer_time
 
 func _on_timer_timeout() -> void:
 	
 	if children_holder.get_child_count() < max_children:
-		print('added child off_screen')
 		var child = SHUZ.instantiate()
 		# in reference to the spawner's bounding box
 		@warning_ignore("narrowing_conversion")
