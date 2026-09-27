@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var heaven_animation: AnimationPlayer = $HeavenLight/HeavenAnimation
 @onready var main_cam: Camera2D = $MainCam
 @onready var meow_box: Area2D = $MeowBox
+@onready var bgm: AudioStreamPlayer = $"../../BGM"
 
 
 var SPEED = 175.00 # oh no, i named a constant in all capitals
@@ -19,12 +20,14 @@ const INV_ROOT_TWO = 0.707106781
 
 signal in_lava
 signal exit_lava
+signal unsleep
 
 enum STATES {
 	IDLE,
 	WALK,
 	BANANALEAF,
 	MEOW,
+	SLEEP
 }
 
 # now that I think of it these are only visual states...
@@ -46,6 +49,9 @@ enum STATES {
 			STATES.MEOW:
 				tween.tween_property(animation_tree, "parameters/blend_position", -1, 0.5)
 				animated_sprite_2d.play("meow")
+			STATES.SLEEP:
+				tween.tween_property(animation_tree, "parameters/blend_position", -1, 0.5)
+				animated_sprite_2d.play("sleep")
 
 enum WEAPONS {
 	BANANALEAF
@@ -54,12 +60,13 @@ enum WEAPONS {
 var weapon : WEAPONS = WEAPONS.BANANALEAF
 var meowing = false
 var has_bananaleaf = false
-var in_control = true
+@export var in_control = false
+var sleeping = false # on the bench
 
 func _physics_process(_delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	if in_control:
+	if in_control and not sleeping:
 		var direction := Input.get_vector("left", "right", "up", "down")
 		if direction:
 			if not $RegularSoundFolder/Catstep.playing:
@@ -78,7 +85,7 @@ func _physics_process(_delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, DEACCEL * INV_ROOT_TWO)
 			velocity.y = move_toward(velocity.y, 0, DEACCEL * INV_ROOT_TWO)
 			
-			if not state == STATES.BANANALEAF and not state == STATES.MEOW:
+			if not state == STATES.BANANALEAF and not state == STATES.MEOW and not state == STATES.SLEEP:
 				state = STATES.IDLE
 			
 		move_and_slide()
@@ -89,13 +96,13 @@ func _ready() -> void:
 
 func _input(_event: InputEvent) -> void:
 	if in_control:
-		if Input.is_action_just_pressed("action") and not state == STATES.BANANALEAF and has_bananaleaf:
+		if Input.is_action_just_pressed("action") and not state == STATES.BANANALEAF and has_bananaleaf and not sleeping:
 			state = STATES.BANANALEAF
 			
 			# turn on hitbox
 			hurtbox_collision.disabled = false
 			$RegularSoundFolder/Bananaleafwhiff.play()
-		elif Input.is_action_just_pressed("meow") and not state == STATES.BANANALEAF:
+		elif Input.is_action_just_pressed("meow") and not state == STATES.BANANALEAF and not sleeping:
 			state = STATES.MEOW
 			animated_sprite_2d.play("meow")
 			meowing = true
@@ -103,6 +110,20 @@ func _input(_event: InputEvent) -> void:
 			if meow_box.has_overlapping_areas():
 				var buything = meow_box.get_overlapping_areas()
 				buything[0].buy() # if somehow there are multiple, it just does one
+		elif Input.is_action_just_pressed("down") and sleeping:
+			sleeping = false
+			state = STATES.IDLE
+			animated_sprite_2d.play("idle")
+			
+			unsleep.emit()
+			
+			# undoes the previous sleeper tweens
+			var tween2 = create_tween()
+			tween2.tween_property(main_cam, "zoom", Vector2(2, 2), 1)
+			
+			var tween3 = create_tween()
+			tween3.tween_property(bgm, "volume_db", -5, 1)
+			
 
 func fall_in_lava():
 	SPEED *= 2

@@ -36,6 +36,12 @@
 [ext_resource type="Texture2D" uid="uid://b1wq2s43qwj2e" path="res://art/catnip.png" id="24_re66h"]
 [ext_resource type="AudioStream" uid="uid://bk7dkj8iw4l3x" path="res://sfx/mario-meow.mp3" id="25_8yue3"]
 [ext_resource type="AudioStream" uid="uid://xnoxn2v0rb2l" path="res://sfx/catstep.wav" id="26_agklt"]
+[ext_resource type="AudioStream" uid="uid://cgnvv17feap6k" path="res://addons/down_whistle.mp3" id="28_ixqlv"]
+[ext_resource type="Script" uid="uid://0bgaxwka1c1x" path="res://scripts/buyables/tutorial.gd" id="32_f0nuf"]
+[ext_resource type="Texture2D" uid="uid://dcofo4opr0sb5" path="res://art/exclam.png" id="33_ixqlv"]
+[ext_resource type="Script" uid="uid://bkk0200wkn8sl" path="res://scripts/buyables/bench.gd" id="33_ltgni"]
+[ext_resource type="Texture2D" uid="uid://c1nfrmd07513e" path="res://art/behnch.png" id="34_yg167"]
+[ext_resource type="AudioStream" uid="uid://2kenp602jx07" path="res://sfx/Music/Bustin Loose _ YouTube Audio Library_Looped_Slowed.ogg" id="40_p6fp0"]
 
 [sub_resource type="Animation" id="Animation_qwhpj"]
 length = 0.001
@@ -655,6 +661,66 @@ terrain_set_0/terrain_1/color = Color(0.5019608, 0.4392157, 1, 1)
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_jehah")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a56dw"]
+size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_mflgo"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:offset_transform_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_34frw"]
+resource_name = "visibilize"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.033333335, 0.16666667, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:offset_transform_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-8, 0, 0, 0.050000004, 1.3333334, 0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ui5n"]
+_data = {
+&"RESET": SubResource("Animation_mflgo"),
+&"visibilize": SubResource("Animation_34frw")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_whk2h"]
 radius = 8.0
 height = 16.0
@@ -1006,6 +1072,17 @@ tracks/5/keys = {
 "points": PackedFloat32Array(0.75, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../../BGM:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_gt4lb"]
 resource_name = "ascend"
@@ -1108,6 +1185,17 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0.06666666)
 }
 tracks/7/use_blend = true
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../../BGM:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-5, -0.25, 0, 0.25, 0, -44.709, -0.12548253, 6.6181664, 0, 0),
+"times": PackedFloat32Array(0, 0.7528952)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ya6yc"]
 _data = {
@@ -1118,21 +1206,162 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_o4040"]
 radius = 5.0
 
+[sub_resource type="Animation" id="Animation_f0nuf"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.7499408, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationTree:active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:in_control")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.17431954, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../BGM:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ixqlv"]
+resource_name = "falling"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-180, 0, 0, 2.7, 56.439156, 0.75, -0.70000005, -120.9729, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationTree:active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:in_control")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(6.2831855, 0, 0, 0.33333334, -1.0762509, -0.17431954, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("IntroAnimation/AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("28_ixqlv")
+}],
+"times": PackedFloat32Array(0.43333334)
+}
+tracks/4/use_blend = true
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../BGM:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-19.042, -5.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p6fp0"]
+_data = {
+&"RESET": SubResource("Animation_f0nuf"),
+&"falling": SubResource("Animation_ixqlv")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whk2h"]
 size = Vector2(160, 232)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y1bg5"]
 normal = Vector2(-1, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a56dw"]
-size = Vector2(16, 16)
-
-[sub_resource type="Animation" id="Animation_mflgo"]
+[sub_resource type="Animation" id="Animation_p6fp0"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate:a")
+tracks/0/path = NodePath("Exclam:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1140,48 +1369,26 @@ tracks/0/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel:offset_transform_position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
-"times": PackedFloat32Array(0)
-}
 
-[sub_resource type="Animation" id="Animation_34frw"]
-resource_name = "visibilize"
-length = 0.3
+[sub_resource type="Animation" id="Animation_55oir"]
+resource_name = "floayt"
+loop_mode = 2
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate:a")
+tracks/0/path = NodePath("Exclam:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(0, 0, 0, 0.033333335, 0.16666667, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel:offset_transform_position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(-8, 0, 0, 0.050000004, 1.3333334, 0, -0.15, 0, 0.15, 0),
-"times": PackedFloat32Array(0, 0.3)
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4, -0.16666667, 0.6666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ui5n"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltgni"]
 _data = {
-&"RESET": SubResource("Animation_mflgo"),
-&"visibilize": SubResource("Animation_34frw")
+&"RESET": SubResource("Animation_p6fp0"),
+&"floayt": SubResource("Animation_55oir")
 }
 
 [sub_resource type="Animation" id="Animation_jn22m"]
@@ -1498,7 +1705,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "Thx for playing!!! :3
-Created in 3 days for the Cozy Fall Jam
+Created in 3 days
+For the 2026 Cozy Fall Jam
 
 - Catragon"
 horizontal_alignment = 1
@@ -1526,7 +1734,7 @@ stream = ExtResource("6_phl1g")
 
 [node name="Fartrejection" type="AudioStreamPlayer" parent="UI/RegularerSoundFolder" unique_id=1437321647]
 stream = ExtResource("7_58tnd")
-volume_db = -5.127
+volume_db = -11.719
 
 [node name="World" type="Node2D" parent="." unique_id=605689712]
 position = Vector2(976, -871)
@@ -1548,6 +1756,7 @@ tile_map_data = PackedByteArray("AAD//xgAAAAAAAAAAAAAABgAAAAAAAAAAAABABgAAAAAAAA
 tile_set = SubResource("TileSet_whk2h")
 
 [node name="Falltree1" type="Sprite2D" parent="World" unique_id=192990356]
+visible = false
 position = Vector2(-160, 415)
 texture = ExtResource("6_jrhyn")
 
@@ -1576,7 +1785,7 @@ texture = ExtResource("13_l5cgh")
 polygon = PackedVector2Array(3, -23, 3, -21.400002, -6.0999985, -17.8, -10.5, -20, -19.5, -20, -28.5, -15, -30.800003, -15, -39.7, -6.200001, -63.9, -8, -78.8, -8, -83, -3.7999992, -83, 3, -74.6, 9, -74, 9, -74, 13, -49, 32.9, -49, 34.6, -42.2, 36, -27.199997, 36, -24.199997, 33, -16.699997, 39, -3.5, 39, 13.5, 29, 14.300003, 29, 23.300003, 36, 31.600006, 36, 46, 27.099998, 58.100006, 26, 62.600006, 26, 77, 17.099998, 84.2, 16, 89.8, 16, 97.7, 9, 100, 9, 100, -1.7000008, 90, -13.700001, 90, -16.099998, 68.899994, -15, 53.800003, -15, 51, -17.8, 51, -19.7, 37, -21.8, 37, -23, 29.199997, -23, 22.300003, -16.2, 13, -21.3, 13, -23)
 
 [node name="LavaPool3" type="Area2D" parent="World/LavaFolder" unique_id=1296211093]
-position = Vector2(168, 679)
+position = Vector2(168, 687)
 collision_layer = 0
 collision_mask = 3
 
@@ -1608,8 +1817,62 @@ texture = ExtResource("13_l5cgh")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/LavaFolder/LavaPool5" unique_id=507444305]
 polygon = PackedVector2Array(3, -23, 3, -21.400002, -6.0999985, -17.8, -10.5, -20, -19.5, -20, -28.5, -15, -30.800003, -15, -39.7, -6.200001, -63.9, -8, -78.8, -8, -83, -3.7999992, -83, 3, -74.6, 9, -74, 9, -74, 13, -49, 32.9, -49, 34.6, -42.2, 36, -27.199997, 36, -24.199997, 33, -16.699997, 39, -3.5, 39, 13.5, 29, 14.300003, 29, 23.300003, 36, 31.600006, 36, 46, 27.099998, 58.100006, 26, 62.600006, 26, 77, 17.099998, 84.2, 16, 89.8, 16, 97.7, 9, 100, 9, 100, -1.7000008, 90, -13.700001, 90, -16.099998, 68.899994, -15, 53.800003, -15, 51, -17.8, 51, -19.7, 37, -21.8, 37, -23, 29.199997, -23, 22.300003, -16.2, 13, -21.3, 13, -23)
 
+[node name="Bench" type="Area2D" parent="World" unique_id=30363893]
+position = Vector2(-520, 231)
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("20_mflgo")
+hide_cost = true
+destroy_on_use = false
+cost = 0
+item_name = "Rest?"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Bench" unique_id=1566109982]
+shape = SubResource("RectangleShape2D_a56dw")
+
+[node name="Panel" type="Panel" parent="World/Bench" unique_id=1701136657]
+modulate = Color(1, 1, 1, 0)
+offset_left = -24.0
+offset_top = -56.0
+offset_right = 28.0
+offset_bottom = -12.0
+offset_transform_enabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="World/Bench/Panel" unique_id=1241109490]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Name" type="Label" parent="World/Bench/Panel/VBoxContainer" unique_id=2003507839]
+layout_mode = 2
+text = "Meow"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cost" type="Label" parent="World/Bench/Panel/VBoxContainer" unique_id=225153078]
+layout_mode = 2
+text = "Meow"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Bench" unique_id=1922036544]
+libraries/ = SubResource("AnimationLibrary_8ui5n")
+
+[node name="AdditionalScript" type="Node" parent="World/Bench" unique_id=26525459]
+script = ExtResource("33_ltgni")
+
+[node name="Floater" type="AnimationPlayer" parent="World/Bench" unique_id=1375039397]
+
+[node name="Behnch" type="Sprite2D" parent="World/Bench" unique_id=1093227681]
+scale = Vector2(2, 2)
+texture = ExtResource("34_yg167")
+
 [node name="Player" type="CharacterBody2D" parent="World" unique_id=1908724820 groups=["Player"]]
-position = Vector2(-216, 423)
+position = Vector2(-184, 439)
 collision_mask = 7
 motion_mode = 1
 script = ExtResource("7_log26")
@@ -1623,15 +1886,16 @@ position = Vector2(0, -13)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ya6yc")
 autoplay = "default"
+frame_progress = 0.92195
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/Player" unique_id=1769982241]
 material = SubResource("ShaderMaterial_whk2h")
-position = Vector2(0, 0.75)
-rotation = -0.17438567
-scale = Vector2(1.0208694, 0.976522)
+position = Vector2(0, 0.7499408)
+rotation = -0.17431954
 sprite_frames = SubResource("SpriteFrames_o4040")
-animation = &"meow"
+animation = &"sleep"
 autoplay = "idle"
+frame_progress = 0.21439081
 
 [node name="Hurtbox" type="Area2D" parent="World/Player/AnimatedSprite2D" unique_id=1987323977]
 collision_layer = 8
@@ -1644,6 +1908,7 @@ disabled = true
 debug_color = Color(0.9978096, 0, 0.1678963, 0.41960785)
 
 [node name="AnimationTree" type="AnimationTree" parent="World/Player" unique_id=1099759597]
+active = false
 root_node = NodePath(".")
 tree_root = SubResource("AnimationNodeBlendSpace1D_o4040")
 anim_player = NodePath("AnimationPlayer")
@@ -1697,6 +1962,7 @@ debug_color = Color(0.82023543, 0.40333125, 0, 0.41960785)
 [node name="Onfire" type="AudioStreamPlayer" parent="World/Player/RegularSoundFolder" unique_id=165549894]
 stream = ExtResource("19_isfgf")
 volume_db = -5.099
+parameters/looping = true
 
 [node name="Bananaleafhit" type="AudioStreamPlayer" parent="World/Player/RegularSoundFolder" unique_id=55868339]
 stream = ExtResource("23_jn22m")
@@ -1712,6 +1978,12 @@ volume_db = -10.986
 stream = ExtResource("26_agklt")
 volume_db = -16.845
 pitch_scale = 0.92
+
+[node name="IntroAnimation" type="AnimationPlayer" parent="World/Player" unique_id=1950163055]
+libraries/ = SubResource("AnimationLibrary_p6fp0")
+autoplay = &"falling"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="World/Player/IntroAnimation" unique_id=93424076]
 
 [node name="LeavePoint" type="Node2D" parent="World" unique_id=524626491]
 position = Vector2(992, 383)
@@ -1811,6 +2083,59 @@ libraries/ = SubResource("AnimationLibrary_8ui5n")
 script = ExtResource("21_34frw")
 
 [node name="Floater" type="AnimationPlayer" parent="World/Shoppe/BuyableBaseObject" unique_id=1643862687]
+
+[node name="Tutorial" type="Area2D" parent="World/Shoppe" unique_id=475245376]
+position = Vector2(-48, 407)
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("20_mflgo")
+cost = 0
+item_name = "\"X\" to Buy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shoppe/Tutorial" unique_id=9884968]
+shape = SubResource("RectangleShape2D_a56dw")
+
+[node name="Panel" type="Panel" parent="World/Shoppe/Tutorial" unique_id=1712228627]
+modulate = Color(1, 1, 1, 0)
+offset_left = -24.0
+offset_top = -56.0
+offset_right = 28.0
+offset_bottom = -12.0
+offset_transform_enabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="World/Shoppe/Tutorial/Panel" unique_id=1377220587]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Name" type="Label" parent="World/Shoppe/Tutorial/Panel/VBoxContainer" unique_id=603704957]
+layout_mode = 2
+text = "Meow"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cost" type="Label" parent="World/Shoppe/Tutorial/Panel/VBoxContainer" unique_id=625975521]
+layout_mode = 2
+text = "Meow"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Shoppe/Tutorial" unique_id=797996509]
+libraries/ = SubResource("AnimationLibrary_8ui5n")
+
+[node name="AdditionalScript" type="Node" parent="World/Shoppe/Tutorial" unique_id=1380494565]
+script = ExtResource("32_f0nuf")
+
+[node name="Floater" type="AnimationPlayer" parent="World/Shoppe/Tutorial" unique_id=967424789]
+libraries/ = SubResource("AnimationLibrary_ltgni")
+autoplay = &"floayt"
+
+[node name="Exclam" type="Sprite2D" parent="World/Shoppe/Tutorial" unique_id=1681308458]
+texture = ExtResource("33_ixqlv")
 
 [node name="Catnipbuy" type="Area2D" parent="World/Shoppe" unique_id=2012988098]
 position = Vector2(-48, 367)
@@ -1971,6 +2296,11 @@ texture = ExtResource("23_ccljq")
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="World/Shoppe/BananaLeafBuy" unique_id=1372401566]
 libraries/ = SubResource("AnimationLibrary_58tnd")
 autoplay = &"rot"
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=739886439]
+stream = ExtResource("40_p6fp0")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="World/LavaFolder/LavaPool" to="." method="_on_lava_pool_body_entered"]
 [connection signal="body_exited" from="World/LavaFolder/LavaPool" to="." method="_on_lava_pool_body_exited"]

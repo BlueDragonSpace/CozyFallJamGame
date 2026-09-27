@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2kenp602jx07"
+path="res://.godot/imported/Bustin Loose _ YouTube Audio Library_Looped_Slowed.ogg-92794449b49b4cfb12dbab25861574d1.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/Music/Bustin Loose _ YouTube Audio Library_Looped_Slowed.ogg"
+dest_files=["res://.godot/imported/Bustin Loose _ YouTube Audio Library_Looped_Slowed.ogg-92794449b49b4cfb12dbab25861574d1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

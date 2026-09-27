@@ -56,6 +56,7 @@ upgrades:
 
 
 next:
+	animate the lava pools
 	sfx
 	benches
 	dead flowers, trees, ashes, and so on
@@ -68,3 +69,4 @@ Credits needed:
 	GodRay shader: https://godotshaders.com/shader/god-rays/
 	Fonts are from BitFontMaker2
 	Many of the sound effects were taken from Pixabay (or I created them in Chiptone)
+	Main BGM is from the YouTube Audio Library ⓒ - Audionautix - https://www.youtube.com/watch?v=w-AUCiUI4Rc

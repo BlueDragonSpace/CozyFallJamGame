@@ -10,12 +10,17 @@ extends Area2D
 @onready var Name: Label = $Panel/VBoxContainer/Name
 @onready var Cost: Label = $Panel/VBoxContainer/Cost
 
+@export var hide_cost : bool = false
+@export var destroy_on_use : bool = true
 @export var cost : int = 100
 @export var item_name : String = "Catnip"
 
 func _ready() -> void:
 	Name.text = item_name
-	Cost.text = str(cost)
+	if not hide_cost:
+		Cost.text = str(cost)
+	else:
+		Cost.text = ""
 
 func visibilize() -> void:
 	animation_player.play("visibilize")
@@ -26,4 +31,6 @@ func invisibilize() -> void:
 func buy() -> void:
 	if Root.check_if_you_can_buy(cost):
 		additional_script.do_the_thang()
-		queue_free()
+		
+		if destroy_on_use:
+			queue_free()
